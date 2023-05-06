@@ -1,0 +1,38 @@
+<div class="contenedor">
+
+    <h2 class="contenedor__titulo">Agregrar Nueva Tarea</h2>
+
+    <form class="contenedor__formulario" [formGroup]="MiTarea">
+
+        <div class="contenedor__formulario__1parte">
+
+            <label class="contenedor__formulario__1parte__label">Nombre</label>
+            <input class="contenedor__formulario__1parte__input" formControlName="nombre"type="text">
+            <label class="contenedor__formulario__1parte__label">Responsable</label>
+            <input class="contenedor__formulario__1parte__input" type="text" formControlName="responsable">
+            <label class="contenedor__formulario__1parte__label">Duracion (HORAS)</label>
+            <input class="contenedor__formulario__1parte__input" type="number" formControlName="duracion">
+            <label class="contenedor__formulario__1parte__label">Estado</label>
+            <select class="contenedor__formulario__1parte__opciones" formControlName="estado">
+                        <option value="">Seleccione una opcion...</option>
+                        <option value="Inicio">Inicio</option>
+                        <option value="En Progreso">En Progreso</option>
+                        <option value="Terminado">Terminado</option>
+            </select>
+
+        </div>
+
+        <div class="contenedor__formulario__2parte">
+            <label class="contenedor__formulario__2parte__label">Accion</label>
+            <textarea class="contenedor__formulario__2parte__input" type="text" formControlName="accion"></textarea>
+
+            <div class="contenedor__formulario__2parte__boton">
+                <button class="contenedor__formulario__2parte__boton__agregar" (click)="guardar()" routerLink="/HomePage">Agregar <img src="../../assets/images/icons8-done (1).svg" alt=""></button>
+                <button class="contenedor__formulario__2parte__boton__cancelar" routerLink="/HomePage">Cancelar <img src="../../assets/images/icons8-close.svg" alt=""></button>
+            </div>
+
+        </div>
+
+    </form>
+
+</div>

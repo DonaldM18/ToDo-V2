@@ -1,0 +1,197 @@
+.titulo{
+    height: 10%;
+    width: 100%;
+    &__texto{
+        font-size: 8.5vh;
+        text-align: center;
+    }
+}
+
+.contenedor{
+    height: 90%;
+    display: flex;
+
+    &__tareas{
+        width: 75%;
+        height: 90vh;
+        overflow-y: auto;
+
+        &__tarea{
+            width: 100%;
+            height: 25%;
+            display: flex;
+            gap: 1vh;
+            padding-right: .75vh;
+
+            &__informacion{
+                width: 25%;
+                height: 100%;
+                padding: 0rem 1.5vh;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+
+                &__nombre{
+                    font-size: 4vh;
+                }
+
+                &__responsable{
+                    font-size: 2.5vh;
+                }
+
+                &__duracion{
+                    font-size: 2.5vh;
+                }
+
+                &__estado{
+                    font-size: 2.5vh;
+                }
+            }
+            
+            &__accion{
+                width: 65%;
+                height: 100%;
+                padding: 0rem 1.5vh;
+                display: flex;
+                align-items: center;
+
+                &__descripcion{
+                    font-size: 2.5vh;
+                }
+            }
+
+            &__botonera{
+                width: 10%;
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+
+                &__botones{
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    height: 45%;
+                    width: 100%;
+                    font-size: 2.5vh;
+                    cursor: pointer;
+
+                    img{
+                        width: 3.5vh;
+                        height: 3.5vh;
+                    }
+                }
+            }
+        }
+    }
+
+    &__acciones{
+        width: 25%;
+        height: 100%;
+
+        &__agregar{
+            width: 100%;
+            height: 25%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 2vh;
+
+            &__titulo{
+                font-size: 4.5vh;
+            }
+
+            &__boton{
+                width: 65%;
+                height: 25%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 3vh;
+                cursor: pointer;
+
+                img{
+                    width: 3.5vh;
+                    height: 3.5vh;
+                }
+            }
+        }
+
+        &__editar{
+            position: relative;
+            width: 100%;
+            height: 75%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            &__titulo{
+                font-size: 4.5vh;
+                text-align: center;
+            }
+
+            &__formulario{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: space-evenly;
+                width: 95%;
+                height: 80%;
+
+                &__inputs{
+                    width: 95%;
+                    height:10%;
+                    font-size: 2.5vh;
+
+                    &__accion{
+                        width: 95%;
+                        height: 20%;
+                        font-size: 2.5vh;  
+                    }
+                }
+
+                &__opciones{
+                    width: 95%;
+                    height:10%;
+                    font-size: 2.5vh;
+
+                    option{
+                        font-size: 2.5vh;
+                    }
+                }
+            }
+            &__boton{
+                width: 65%;
+                height: 10%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 3vh;
+                cursor: pointer;
+
+                img{
+                    width: 3.5vh;
+                    height: 3.5vh;
+                }
+            }
+
+            &__cancelar{
+                position: absolute;
+                top:0;
+                left: 0;
+                width: 4.5vh;
+                height: 4.5vh;
+                background: transparent;
+                border: none;
+                cursor: pointer;
+
+                img{
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+        }
+    }
+}

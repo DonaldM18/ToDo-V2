@@ -1,0 +1,68 @@
+<div class="titulo">
+    <h2 class="titulo__texto">ToDO</h2>
+</div>
+
+<div class="contenedor">
+
+    <div class="contenedor__tareas">
+
+        <div class="contenedor__tareas__tarea" *ngFor="let tarea of tareas">
+
+            <div class="contenedor__tareas__tarea__informacion" >
+
+                <h2 class="contenedor__tareas__tarea__informacion__nombre">{{tarea.nombre}}</h2>
+                <p class="contenedor__tareas__tarea__informacion__responsable">{{tarea.responsable}}</p>
+                <p class="contenedor__tareas__tarea__informacion__duracion"> {{tarea.duracion}} Horas</p>
+                <p class="contenedor__tareas__tarea__informacion__estado">{{tarea.estado}}</p>
+                
+            </div>
+
+            <div class="contenedor__tareas__tarea__accion">
+
+                <p class="contenedor__tareas__tarea__accion__descripcion">{{tarea.accion}}</p>
+    
+            </div>
+
+            <div class="contenedor__tareas__tarea__botonera">
+
+                <button class="contenedor__tareas__tarea__botonera__botones" (click)="eliminar(tarea.id)">Eliminar <img src="../../assets/images/iconmonstr-trash-can-thin.svg"></button>
+                <button class="contenedor__tareas__tarea__botonera__botones" (click)="editar(tarea.id)">Editar <img src="../../assets/images/iconmonstr-pencil-line-lined.svg" alt=""></button>
+
+            </div>
+        </div>
+
+
+    </div>
+
+    <div class="contenedor__acciones">
+
+        <div class="contenedor__acciones__agregar">
+
+            <h2 class="contenedor__acciones__agregar__titulo">Agregar nueva Tarea</h2>
+            <button class="contenedor__acciones__agregar__boton" routerLink="/Agregar">Agregar <img src="../../assets/images/iconmonstr-plus-circle-lined.svg" alt=""></button>
+
+        </div>
+
+        <div class="contenedor__acciones__editar" [formGroup]="EditarTarea" *ngIf="edicion">
+            <h2 class="contenedor__acciones__editar__titulo">Editar</h2>
+            <form class="contenedor__acciones__editar__formulario">
+                <input class="contenedor__acciones__editar__formulario__inputs" formControlName="nombre" type="text" placeholder="Nombre">
+                <textarea    class="contenedor__acciones__editar__formulario__inputs__accion" formControlName="accion" type="text" placeholder="Accion"></textarea>
+                <input class="contenedor__acciones__editar__formulario__inputs" formControlName="responsable" type="text" placeholder="Responsable">
+                <input class="contenedor__acciones__editar__formulario__inputs" formControlName="duracion" type="number" placeholder="Duracion (Horas)">
+                <select class="contenedor__acciones__editar__formulario__opciones" formControlName="estado">
+                    <option value="">Seleccione una opcion...</option>
+                    <option value="Inicio">Inicio</option>
+                    <option value="En Progreso">En Progreso</option>
+                    <option value="Terminado">Terminado</option>
+                </select>
+            </form>
+            <button class="contenedor__acciones__editar__boton" (click)="guardarCambios(tareaEdicion)">Aceptar Cambios <img src="../../assets/images/iconmonstr-pencil-line-lined.svg"> </button>
+            <button class="contenedor__acciones__editar__cancelar" (click)="cerrar()"><img src="../../assets/images/icons8-close.svg" alt=""></button>
+        </div>
+
+    </div>
+
+
+
+</div>
